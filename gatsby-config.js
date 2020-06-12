@@ -16,6 +16,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-layout`,
+    `gatsby-plugin-mdx`,
 
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -28,7 +30,29 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+
+        apiToken: `5e555c9b21fda3b5ffb81b86bb3903`,
+
+        // If you are working on development/staging environment, you might want to
+        // preview the latest version of records instead of the published one:
+        previewMode: false,
+
+        // Disable automatic reloading of content when some change occurs on DatoCMS:
+        disableLiveReload: false,
+
+
+
+        // Setup locale fallbacks
+        // In this example, if some field value is missing in Italian, fall back to English
+        localeFallbacks: {
+          it: ['en'],
+        },
+      },
+    },
 
     // {
     //   resolve: `gatsby-plugin-manifest`,
