@@ -1,9 +1,11 @@
 import Navigation
     from "../components/Navigation/Navigation";
-import React, {useState} from "react";
-import {Helmet} from "react-helmet";
+import React from "react";
+
 import styled from "styled-components";
 import Footer from "../components/Footer";
+import "./index.css"
+import { Helmet } from "react-helmet";
 
 const Wrapper = styled.div`
 
