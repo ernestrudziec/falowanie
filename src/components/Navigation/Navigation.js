@@ -97,7 +97,7 @@ const Navigation = () => {
             <Logo><Link onClick={() => setNav(false)} to='/'>FALOWANIE</Link></Logo>
             <NavigationList open={isNavOpened}>
                 <li ><Link activeStyle={activeLink} onClick={() => setNav(false)} to='/about'>o mnie</Link></li>
-                <li ><Link activeStyle={activeLink} onClick={() => setNav(false)} to='/articles'>lirycznie</Link></li>
+                <li ><Link activeStyle={activeLink} onClick={() => setNav(false)} to='/articles'>artykuły</Link></li>
                 <li ><Link activeStyle={activeLink} onClick={() => setNav(false)} to='/contact'>kontakt</Link></li>
                 <li ><Link activeStyle={activeLink} onClick={() => setNav(false)} to='https://www.instagram.com/lacri.mae/'><span className="fab fa-instagram"></span></Link></li>
             </NavigationList>

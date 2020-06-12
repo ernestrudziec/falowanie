@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {graphql} from "gatsby";
 import styled from "styled-components";
 import slugify from "slugify";
+import { Link } from "gatsby";
 
 const Wrapper = styled.div`
 display: flex;
@@ -12,6 +13,12 @@ width: 95vw;
 height: auto;
 margin: 3em 0;
 
+a{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 `;
 
 const Article = styled.div`
@@ -19,6 +26,16 @@ width: 320px;
 height: 200px;
 margin: 2em 1em;
 cursor: pointer;
+
+@media screen and (max-width: 500px){
+margin: 2em 0;
+width: 90%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+
+}
 
 
 img{
@@ -57,12 +74,12 @@ const ArticlesPage = ({data}) => {
                     });
 
                     return(
-                        <a href={`articles/${link}`}>
+                        <Link to={`articles/${link}`}>
                     <Article id={id} key={id}>
                         <img src={url}/>
                         <h2>{title}</h2>
                     </Article>
-                        </a>
+                        </Link>
                     );
                 })
             }

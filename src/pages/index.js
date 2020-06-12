@@ -1,8 +1,9 @@
 import React, {useState} from "react"
 import styled from 'styled-components';
 
-import paulina from '../assets/images/paulina7.webp';
+import paulina from '../assets/images/paulina5.jpg';
 
+import { Link } from "gatsby";
 import Navigation
     from "../components/Navigation/Navigation";
 import {Helmet} from "react-helmet";
