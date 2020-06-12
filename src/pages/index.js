@@ -102,11 +102,11 @@ const IndexPage = () => {
                 and a piece of writing can never be
                 flawless.
             </HeroQuote>
-            <a href='/articles'>
+            <Link to='/articles'>
             <button>
                 Zobacz o czym piszę
             </button>
-            </a>
+            </Link>
         </Hero>
     )
 
