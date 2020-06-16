@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import paulina from "../assets/images/paulina_main.jpg"
-
 import { Link } from "gatsby"
 import Navigation from "../components/Navigation/Navigation"
 import { Helmet } from "react-helmet"
@@ -26,7 +25,7 @@ const Hero = styled.div`
     right: 0;
     bottom: 0;
     top: 0;
-    background: url(${paulina}) center no-repeat;
+    background: url(${({ backgroundUrl }) => backgroundUrl}) center no-repeat;
     background-size: cover;
     filter: grayscale();
     z-index: -2;
@@ -83,18 +82,41 @@ const HeroQuote = styled.h1`
   }
 `
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const mainPhotoUrl = data.allDatoCmsZdjecieglowne.nodes[0].mainPhoto.url
+
+  useEffect(() => {
+    console.log(mainPhotoUrl)
+  }, [])
+
   return (
-    <Hero>
-      <HeroQuote>
-        beauty isn’t perfection; life isn’t without suffering; and a piece of
-        writing can never be flawless.
-      </HeroQuote>
-      <Link to="/articles">
-        <button>Zobacz o czym piszę</button>
-      </Link>
-    </Hero>
+    <>
+      <Helmet>
+        <title>Falowanie</title>
+      </Helmet>
+      <Hero backgroundUrl={mainPhotoUrl}>
+        <HeroQuote>
+          beauty isn’t perfection; life isn’t without suffering; and a piece of
+          writing can never be flawless.
+        </HeroQuote>
+        <Link to="/articles">
+          <button>Zobacz o czym piszę</button>
+        </Link>
+      </Hero>
+    </>
   )
 }
+
+export const query = graphql`
+  query MainPhotoQuery {
+    allDatoCmsZdjecieglowne {
+      nodes {
+        mainPhoto {
+          url
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

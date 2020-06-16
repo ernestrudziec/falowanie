@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import slugify from "slugify"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const Wrapper = styled.div`
   display: flex;
@@ -57,24 +58,29 @@ const ArticlesPage = ({ data }) => {
   }, [])
 
   return (
-    <Wrapper>
-      {articles.map(article => {
-        const { id, title } = article.node
-        let url = article.node.thumbnail.url
-        let link = slugify(article.node.title, {
-          lower: true,
-        })
+    <>
+      <Helmet>
+        <title>Falowanie - Artykuły</title>
+      </Helmet>
+      <Wrapper>
+        {articles.map(article => {
+          const { id, title } = article.node
+          let url = article.node.thumbnail.url
+          let link = slugify(article.node.title, {
+            lower: true,
+          })
 
-        return (
-          <Link to={`articles/${link}`}>
-            <Article id={id} key={id}>
-              <img src={url} />
-              <h2>{title}</h2>
-            </Article>
-          </Link>
-        )
-      })}
-    </Wrapper>
+          return (
+            <Link to={`articles/${link}`}>
+              <Article id={id} key={id}>
+                <img src={url} />
+                <h2>{title}</h2>
+              </Article>
+            </Link>
+          )
+        })}
+      </Wrapper>
+    </>
   )
 }
 

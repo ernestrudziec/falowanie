@@ -4,6 +4,7 @@ import paulina1 from "../assets/images/paulina3.jpg"
 import paulina2 from "../assets/images/paulina5.jpg"
 import { graphql } from "gatsby"
 import ReactMarkdown from "react-markdown"
+import { Helmet } from "react-helmet"
 
 const StyledInsideWrapper = styled.article`
   white-space: pre-wrap;
@@ -55,20 +56,25 @@ const AboutPage = ({ data }) => {
   }, [])
 
   return (
-    <Wrapper>
-      <StyledInsideWrapper>
-        <p>
-          <ReactMarkdown source={LEFT_SIDE_PARAGRAPH} />
-        </p>
-        <img src={LEFT_PHOTO_URL} />
-      </StyledInsideWrapper>
-      <StyledInsideWrapperRight>
-        <img src={RIGHT_PHOTO_URL} />
-        <p>
-          <ReactMarkdown source={RIGHT_SIDE_PARAGRAPH} />
-        </p>
-      </StyledInsideWrapperRight>
-    </Wrapper>
+    <>
+      <Helmet>
+        <title>Falowanie - O mnie</title>
+      </Helmet>
+      <Wrapper>
+        <StyledInsideWrapper>
+          <p>
+            <ReactMarkdown source={LEFT_SIDE_PARAGRAPH} />
+          </p>
+          <img src={LEFT_PHOTO_URL} />
+        </StyledInsideWrapper>
+        <StyledInsideWrapperRight>
+          <img src={RIGHT_PHOTO_URL} />
+          <p>
+            <ReactMarkdown source={RIGHT_SIDE_PARAGRAPH} />
+          </p>
+        </StyledInsideWrapperRight>
+      </Wrapper>
+    </>
   )
 }
 

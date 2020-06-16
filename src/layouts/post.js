@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import ReactMarkdown from "react-markdown"
+import { Helmet } from "react-helmet"
 
 const StyledParagraph = styled.p`
   line-height: 1em;
@@ -21,13 +22,18 @@ const PostLayout = ({ pathContext }) => {
   useEffect(() => {}, [])
 
   return (
-    <StyledPostWrapper>
-      <h2>{title}</h2>
-      <StyledParagraph>
-        <ReactMarkdown source={paragraph} />
-      </StyledParagraph>
-      <h4>{data.author}</h4>
-    </StyledPostWrapper>
+    <>
+      <Helmet>
+        <title>Falowanie - {title}</title>
+      </Helmet>
+      <StyledPostWrapper>
+        <h2>{title}</h2>
+        <StyledParagraph>
+          <ReactMarkdown source={paragraph} />
+        </StyledParagraph>
+        <h4>{data.author}</h4>
+      </StyledPostWrapper>
+    </>
   )
 }
 
