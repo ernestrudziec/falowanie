@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import styled from 'styled-components';
 
-import paulina from '../assets/images/paulina5.jpg';
+import paulina from '../assets/images/paulina_main.jpg';
 
 import { Link } from "gatsby";
 import Navigation

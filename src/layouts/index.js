@@ -9,17 +9,12 @@ import { Helmet } from "react-helmet";
 
 const Wrapper = styled.div`
 
-
 display: flex;
 justify-content: space-between;
-
 align-items: center;
-
 flex-direction: column;
 min-height: 100vh;
 width: 100%;
-
-
 background: #E9E5DD;
 
 `;
@@ -36,7 +31,6 @@ const MainLayout = ({children}) => {
             </script>
         </Helmet>
         <Wrapper>
-
             <Navigation/>
             <div>
                 {children}

@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import paulina1 from '../assets/images/paulina3.jpg';
 import paulina2 from '../assets/images/paulina5.jpg';
+import {graphql} from "gatsby";
 
 
 
 const StyledInsideWrapper = styled.article`
+
+white-space: pre-wrap;
 display: flex;
 width: 45%;
 padding: 1em;
@@ -49,31 +52,59 @@ flex-direction: column;
 }
 `;
 
-const AboutPage = () => (
 
+
+const AboutPage = ({data}) => {
+
+    const LEFT_SIDE_PARAGRAPH = data.allDatoCmsOMnie.edges[0].node.lewyTekst;
+    const RIGHT_SIDE_PARAGRAPH = data.allDatoCmsOMnie.edges[0].node.prawyTekst;
+    const LEFT_PHOTO_URL = data.allDatoCmsOMnie.edges[0].node.leweZdjecie.url;
+    const RIGHT_PHOTO_URL = data.allDatoCmsOMnie.edges[0].node.praweZdjecie.url;
+
+    useEffect(() => {
+        console.log(data);
+    }, []);
+
+    return(
     <Wrapper>
         <StyledInsideWrapper>
-        <p>
-            <strong>Cześć</strong>
-< br />< br />
-            <strong>mam na imię Paulina, mam 23 lata i szaleńczo kocham się w życiu.</strong>
-            < br />< br />
-            Studiuję polonistykę, ale literaturą zajmuję się od najmłodszych lat, a poezją, odkąd odkryłam jak wielowymiarowym narzędziem jest słowo. Pisanie dzielę między innymi hobby, do których należy szeroko pojęty rozwój osobisty i duchowy, prowadzący mnie do zrozumienia istoty tego, kim naprawdę jestem ja oraz ludzie, których spotykam w swojej podróży.
-        </p>
-            <img src={paulina1}/>
+            <p>
+                {LEFT_SIDE_PARAGRAPH}
+            </p>
+            <img src={LEFT_PHOTO_URL}/>
         </StyledInsideWrapper>
         <StyledInsideWrapperRight>
-        <img src={paulina2}/>
-        <p>
-            <h2>Paulina Ulatowska</h2>
-            <strong>O poruszeniu ciał niebieskich, połknięciu słońca i kąpieli w jego ognistej wrzawie. O tym, że źródło naszych najśmielszych pragnień mieszka w sercu, wybaczenie jest drogą do wolności, a słowo ma niezwykle sprawczą moc,</strong>
-            < br/> < br/>< br/>
-            ślę serdeczności.
-
-        </p>
+            <img src={RIGHT_PHOTO_URL}/>
+            <p>
+                {RIGHT_SIDE_PARAGRAPH}
+            </p>
         </StyledInsideWrapperRight>
     </Wrapper>
+    )
 
-);
+};
+
+export const query = graphql`
+query AboutMeQuery {
+  allDatoCmsOMnie {
+    edges {
+      node {
+        lewyTekst
+        prawyTekst
+        praweZdjecie {
+            url
+          }
+         
+        leweZdjecie {
+            url
+          }
+        
+      }
+    }
+  }
+}
+
+
+`;
 
 export default AboutPage;
