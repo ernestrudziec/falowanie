@@ -88,7 +88,7 @@ const IndexPage = ({ data }) => {
           beauty isn’t perfection; life isn’t without suffering; and a piece of
           writing can never be flawless.
         </HeroQuote>
-        <Link to="/articles">
+        <Link to="/dziennik">
           <button>Zobacz o czym piszę</button>
         </Link>
       </Hero>
