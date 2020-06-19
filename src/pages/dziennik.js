@@ -62,7 +62,7 @@ const ArticlesPage = ({ data }) => {
   return (
     <>
       <Helmet>
-        <title>Falowanie - Artykuły</title>
+        <title>Falowanie - Dziennik</title>
       </Helmet>
       <Wrapper>
         {articles.map(article => {
