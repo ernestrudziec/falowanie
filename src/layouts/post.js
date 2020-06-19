@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import { Helmet } from "react-helmet"
 
 const StyledParagraph = styled.p`
-  line-height: 1em;
+  line-height: 2em;
   white-space: pre-wrap;
 `
 

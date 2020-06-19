@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 
 const Hero = styled.div`
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 70vh;
   width: 100vw;
   position: relative;
   z-index: 0;
@@ -19,7 +19,7 @@ const Hero = styled.div`
   padding: 0 3em;
 
   ::before {
-    position: absolute;
+    position: fixed;
     content: "";
     left: 0;
     right: 0;
@@ -27,25 +27,13 @@ const Hero = styled.div`
     top: 0;
     background: url(${({ backgroundUrl }) => backgroundUrl}) center no-repeat;
     background-size: cover;
-    filter: grayscale();
+    filter: contrast(90%) saturate(0.7);
     z-index: -2;
   }
 
-  ::after {
-    position: absolute;
-    content: "";
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 1) -30%, rgba(0, 0, 0, 0));
-
-    z-index: -1;
-  }
-
   button {
-    font-size: 1.5em;
-    padding: 0.5em 2em;
+    font-size: 1em;
+    padding: 1em 3em;
     font-weight: 900;
     text-transform: uppercase;
     background: transparent;
@@ -94,6 +82,7 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <title>Falowanie</title>
       </Helmet>
+
       <Hero backgroundUrl={mainPhotoUrl}>
         <HeroQuote>
           beauty isn’t perfection; life isn’t without suffering; and a piece of

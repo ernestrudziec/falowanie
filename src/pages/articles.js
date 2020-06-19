@@ -10,8 +10,8 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 95vw;
-  height: auto;
+  max-width: 1000px;
+  min-height: 60vh;
   margin: 3em 0;
 
   a {
@@ -22,14 +22,15 @@ const Wrapper = styled.div`
 `
 
 const Article = styled.div`
-  width: 320px;
+  width: 200px;
   height: 200px;
   margin: 2em 1em;
   cursor: pointer;
 
   @media screen and (max-width: 500px) {
-    margin: 2em 0;
-    width: 90%;
+    margin: 2em 1em;
+    width: 90vw;
+
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -45,7 +46,8 @@ const Article = styled.div`
   h2 {
     margin-bottom: 1em;
     margin-top: 0.2em;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-weight: 600;
     padding: 0;
   }
 `
