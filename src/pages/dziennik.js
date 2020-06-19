@@ -73,7 +73,7 @@ const ArticlesPage = ({ data }) => {
           })
 
           return (
-            <Link to={`articles/${link}`}>
+            <Link to={`dziennik/${link}`}>
               <Article id={id} key={id}>
                 <img src={url} />
                 <h2>{title}</h2>

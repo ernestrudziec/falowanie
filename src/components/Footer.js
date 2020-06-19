@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
   color: #151515;
   font-size: 1em;
   padding: 1.5em 3em;
-  z-index: 99;
+  z-index: 4;
   text-align: center;
   line-height: 2;
   background: #e9e5dd;

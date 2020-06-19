@@ -189,7 +189,7 @@ const Navigation = () => {
           <Link
             activeStyle={activeLink}
             onClick={() => setNav(false)}
-            to="/about"
+            to="/o-mnie"
           >
             o mnie
           </Link>
@@ -198,7 +198,7 @@ const Navigation = () => {
           <Link
             activeStyle={activeLink}
             onClick={() => setNav(false)}
-            to="/articles"
+            to="/dziennik"
           >
             dziennik
           </Link>
@@ -207,7 +207,7 @@ const Navigation = () => {
           <Link
             activeStyle={activeLink}
             onClick={() => setNav(false)}
-            to="/contact"
+            to="/kontakt"
           >
             kontakt
           </Link>
