@@ -7,6 +7,15 @@ import { Helmet } from "react-helmet"
 const StyledParagraph = styled.div`
   line-height: 2em;
   white-space: pre-wrap;
+  max-width: 600px;
+  
+  img{
+  max-width: 600px;
+
+@media screen and (max-width: 700px){
+width: 100%;
+}
+  }
 `
 
 const StyledPostWrapper = styled.article`
@@ -34,7 +43,7 @@ const PostLayout = ({ pathContext }) => {
         <StyledParagraph>
           <ReactMarkdown source={paragraph} />
         </StyledParagraph>
-        <h4>{data.author}</h4>
+          <h4>{data.author}</h4>
       </StyledPostWrapper>
     </>
   )
