@@ -5,6 +5,13 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `falowanie-pl`
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
