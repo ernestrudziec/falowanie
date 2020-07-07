@@ -3,19 +3,18 @@ import styled from "styled-components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import ReactMarkdown from "react-markdown"
 import { Helmet } from "react-helmet"
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 const StyledParagraph = styled.div`
   line-height: 2em;
   white-space: pre-wrap;
   max-width: 600px;
-  
-  img{
-  max-width: 600px;
 
-@media screen and (max-width: 700px){
-width: 100%;
-}
+  img {
+    max-width: 600px;
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+    }
   }
 `
 
@@ -29,16 +28,7 @@ const PostLayout = ({ pathContext }) => {
 
   let formattedParagraph = paragraph
 
-    let disqusConfig = {
-        url: `https://www.falowanie.pl/dziennik/${slug}`,
-        identifier: slug,
-        title: title,
-    };
-
   return (
-
-
-
     <>
       <Helmet>
         <title>Falowanie - {title}</title>
@@ -51,12 +41,10 @@ const PostLayout = ({ pathContext }) => {
       <StyledPostWrapper>
         <h2>{title}</h2>
 
-
-          <StyledParagraph>
+        <StyledParagraph>
           <ReactMarkdown source={paragraph} />
         </StyledParagraph>
-          <h4>{data.author}</h4>
-          <Disqus config={disqusConfig} />
+        <h4>{data.author}</h4>
       </StyledPostWrapper>
     </>
   )
