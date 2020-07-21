@@ -5,12 +5,19 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-29E3MD0JRG",
+        head: true,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `falowanie-pl`
-      }
+        shortname: `falowanie-pl`,
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
@@ -32,8 +39,8 @@ module.exports = {
         fonts: [
           {
             family: `Cormorant Garamond`,
-            variants: [`300`, `400`, `500`,`600`,`700`],
-            subsets: [`latin-ext`]
+            variants: [`300`, `400`, `500`, `600`, `700`],
+            subsets: [`latin-ext`],
           },
         ],
       },
@@ -41,7 +48,6 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-
         apiToken: `5e555c9b21fda3b5ffb81b86bb3903`,
 
         // If you are working on development/staging environment, you might want to
@@ -51,12 +57,10 @@ module.exports = {
         // Disable automatic reloading of content when some change occurs on DatoCMS:
         disableLiveReload: false,
 
-
-
         // Setup locale fallbacks
         // In this example, if some field value is missing in Italian, fall back to English
         localeFallbacks: {
-          it: ['en'],
+          it: ["en"],
         },
       },
     },
