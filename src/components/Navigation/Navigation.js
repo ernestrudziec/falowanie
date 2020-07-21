@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import hamburgerIcon from "../../assets/icons/bars-solid.svg"
 
 const NavigationWrapper = styled.nav`
   display: flex;
@@ -111,8 +112,17 @@ const Hamburger = styled.button`
   cursor: pointer;
   padding: 0;
 
+  img {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    z-index: 999;
+  }
+
   @media screen and (max-width: 1200px) {
-    display: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 const activeLink = {
@@ -207,19 +217,26 @@ const Navigation = () => {
           <Link
             activeStyle={activeLink}
             onClick={() => setNav(false)}
+            to="/video"
+          >
+            video
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeStyle={activeLink}
+            onClick={() => setNav(false)}
             to="/kontakt"
           >
             kontakt
           </Link>
         </li>
         <li>
-          <a href="https://www.instagram.com/lacri.mae" target="_blank">
-            <span className="fab fa-instagram"></span>
-          </a>
+          <a href="https://www.instagram.com/lacri.mae" target="_blank"></a>
         </li>
       </NavigationList>
       <Hamburger onClick={() => setNav(!isNavOpened)}>
-        <span className="fa fa-bars" aria-hidden="true"></span>
+        <img src={hamburgerIcon} />
       </Hamburger>
     </NavigationWrapper>
   )
