@@ -226,6 +226,15 @@ const Navigation = () => {
           <Link
             activeStyle={activeLink}
             onClick={() => setNav(false)}
+            to="/oferta"
+          >
+            oferta
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeStyle={activeLink}
+            onClick={() => setNav(false)}
             to="/kontakt"
           >
             kontakt
