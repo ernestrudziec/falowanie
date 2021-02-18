@@ -34,18 +34,6 @@ module.exports = {
     `gatsby-plugin-mdx`,
 
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Cormorant Garamond`,
-            variants: [`300`, `400`, `500`, `600`, `700`],
-            subsets: [`latin-ext`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: `5e555c9b21fda3b5ffb81b86bb3903`,
